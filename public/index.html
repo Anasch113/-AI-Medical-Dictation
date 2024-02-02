@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medical Dictation AI</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          },
+          fontFamily: {
+        'poppins': ['Poppins', 'sans-serif'],
+        
+      },
+        }
+      }
+    }
+  </script>
+  <body class="w-full flex items-center justify-center min-h-screen bg-blue-700 font-poppins">
+    <div class="flex h-full w-2/4 items-center justify-center max-[600px]:w-full">
+      <div class="bg-white  rounded-md flex py-6 px-4 flex-col gap-5  min-h-500 min-w-96 max-[600px]:min-h-min max-[600px]:w-full max-[600px]:gap-2">
+
+    
+   
+      <h1 class="text-xl font-semibold">Speech To Text</h1>
+
+      <span class="flex flex-col gap-2 p-3">
+        <label class="text-sm text-gray-500">Language</label>
+        <select class="border border-gray-500 p-3 text-sm" name="language" id="language">
+<option disabled>Select Language</option>
+<option value="english">English</option>
+<option value="spanish">Spanish</option>
+<option value="arabic">Arabic</option>
+        </select>
+
+      </span>
+
+     
+    
+    <div class="flex flex-col gap-2">
+      <!-- <p id="real-time-title" class="real-time-interface__title">
+        Click start to begin recording!
+      </p> -->
+
+      <button id="button" class="bg-blue-700 text-center text-white py-3 px-3 rounded-sm hover:bg-blue-500 pointer">Start</button>
+
+      <div class="'w-full  flex flex-col">
+      <p class="text-xl py-2 font-semibold">Result :</p>
+      <textarea cols="25" rows="8" id="message" class="border w-full border-gray-500 rounded-md outline-none  p-3"></textarea>
+    </div>
+
+    </div>
+
+    <div class='flex flex-row items-center justify-center gap-2'>
+
+
+      <button onclick="clearTranscription()" class='bg-blue-700 text-center text-white py-3 px-3 rounded-md w-2/4'> <span class='flex items-center justify-center gap-2'>
+        <i class="fa-regular fa-trash-can"></i>
+        <span class="material-symbols-outlined">
+          delete
+          </span>
+      <p class=' text-center'>Clear</p>
+      </span> 
+      
+      </button>
+      
+      <button onclick="downloadTranscription()" class='bg-gray-500 text-center text-white py-3 px-3 rounded-md w-2/4'> <span class='flex items-center justify-center gap-2'>
+      
+        <span class="material-symbols-outlined">
+          cloud_download
+          </span>
+      <p className='text-center'>Download</p>
+         </span> 
+      
+         </button>
+      
+      
+      </div>
+
+
+    
+    <script src="assemblyai.js"></script>
+    <script src="index.js"></script>
+  </div>
+  </div>
+  </body>
+</html>
